@@ -9,7 +9,7 @@ import (
 )
 
 func getInput() []int {
-	raw, _ := ioutil.ReadFile("input")
+	raw, _ := ioutil.ReadFile("input.txt")
 	data := strings.Split(string(raw), "\n")
 	values := []int{}
 	for _, v := range data {

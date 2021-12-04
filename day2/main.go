@@ -19,7 +19,7 @@ type position struct {
 }
 
 func getInput() []command {
-	raw, _ := ioutil.ReadFile("input")
+	raw, _ := ioutil.ReadFile("input.txt")
 	data := strings.Split(string(raw), "\n")
 
 	commands := []command{}
