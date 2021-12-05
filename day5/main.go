@@ -55,18 +55,6 @@ func getInput() []line {
 	return lines
 }
 
-func isIntersecting(p1 point, p2 point, q1 point, q2 point) bool {
-	return (((q1.x-p1.x)*(p2.y-p1.y)-(q1.y-p1.y)*(p2.x-p1.x))*((q2.x-p1.x)*(p2.y-p1.y)-(q2.y-p1.y)*(p2.x-p1.x)) < 0) &&
-		(((p1.x-q1.x)*(q2.y-q1.y)-(p1.y-q1.y)*(q2.x-q1.x))*((p2.x-q1.x)*(q2.y-q1.y)-(p2.y-q1.y)*(q2.x-q1.x)) < 0)
-}
-
-func findIntersection(a1 point, a2 point, b1 point, b2 point) point {
-	return point{
-		x: ((a1.x*a2.y-a1.y*a2.x)*(b1.x-b2.x) - (a1.x-a2.x)*(b1.x*b2.y-b1.y*b2.x)) / ((a1.x-a2.x)*(b1.y-b2.y) - (a1.y-a2.y)*(b1.x-b2.x)),
-		y: ((a1.x*a2.y-a1.y*a2.x)*(b1.y-b2.y) - (a1.y-a2.y)*(b1.x*b2.y-b1.y*b2.x)) / ((a1.x-a2.x)*(b1.y-b2.y) - (a1.y-a2.y)*(b1.x-b2.x)),
-	}
-}
-
 func isHorizontalOVvertical(line line) bool {
 	return line.start.x == line.end.x || line.start.y == line.end.y
 }
